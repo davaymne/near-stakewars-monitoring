@@ -1,5 +1,7 @@
 
 # NEAR stakewars monitoring
+<img width="1358" alt="Screenshot 2022-07-31 at 00 04 43" src="https://user-images.githubusercontent.com/29555611/182002987-32b9e884-845d-4515-8147-e8ba55094553.png">
+
 This is one-line bash script to get node_exporter-prometheus-grafana + grafana dashboard installed for monitoring **Near stakewars Validator Node**.
 
 Testnet: https://github.com/near/stakewars-iii
