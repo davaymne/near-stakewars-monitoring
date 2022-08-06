@@ -22,6 +22,14 @@ http://YOUR-NODE-IP:3000/
 Use Grafana default credentials:
  - User: admin
  - Pass: admin
+
+On top right of the dashboard page in `Account` section provide your `POOL-ID`
+
+## Dashboard screenshots
+
+<img width="1373" alt="Screenshot 2022-08-06 at 13 30 45" src="https://user-images.githubusercontent.com/29555611/183249112-f925cffb-3499-4b71-b155-2ebf9c0f0bac.png">
+<img width="1361" alt="Screenshot 2022-08-06 at 13 33 05" src="https://user-images.githubusercontent.com/29555611/183249115-e16603ab-b3a1-4ab8-adbe-ac57dc4fe98e.png">
+
  
  ## Optional: Configure Alert Notification
  
