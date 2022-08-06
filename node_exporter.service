@@ -1,0 +1,14 @@
+[Unit]
+Description=Node Exporter
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=near_monitor
+ExecStart=/opt/node_exporter/node_exporter
+
+[Install]
+WantedBy=multi-user.target

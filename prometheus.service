@@ -1,0 +1,14 @@
+[Unit]
+Description=Prometheus
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=near_monitor
+ExecStart=/opt/prometheus/prometheus --config.file=/opt/prometheus/prometheus.yml --storage.tsdb.path=/var/lib/prometheus
+
+[Install]
+WantedBy=multi-user.target
