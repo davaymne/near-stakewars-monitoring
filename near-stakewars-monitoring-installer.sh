@@ -29,7 +29,7 @@ function installNodeExporter {
 	echo -e '\n\e[42mDownloading packages...\e[0m\n'
 	version=`wget -qO- -t1 -T2 "https://api.github.com/repos/prometheus/node_exporter/releases/latest" | grep "tag_name" | head -n 1 | awk -F ":" '{print $2}' | sed 's/\"//g;s/,//g;s/ //g'`
 	wget -O node_exporter-${version:1}.linux-amd64.tar.gz https://github.com/prometheus/node_exporter/releases/download/${version}/node_exporter-${version:1}.linux-amd64.tar.gz
-	tar xvfz node_exporter-*.*-amd64.tar.gz && cp node_exporter-*.*-amd64/node_exporter . && chown -R near_monitor:near_monitor /opt/node_exporter/
+	tar xvfz node_exporter-${version:1}.linux-amd64.tar.gz && cp node_exporter-${version:1}.linux-amd64/node_exporter . && chown -R near_monitor:near_monitor /opt/node_exporter/
   wget -O /etc/systemd/system/node_exporter.service  https://raw.githubusercontent.com/davaymne/near-stakewars-monitoring/main/node_exporter.service
 	echo -e '\n\e[42mStarting service node_exporter...\e[0m\n'
 	systemctl enable --now node_exporter
@@ -50,7 +50,7 @@ function installPrometheus {
   wget -O prometheus.yml https://raw.githubusercontent.com/davaymne/near-stakewars-monitoring/main/prometheus/prometheus.yml
 	version=`wget -qO- -t1 -T2 "https://api.github.com/repos/prometheus/prometheus/releases/latest" | grep "tag_name" | head -n 1 | awk -F ":" '{print $2}' | sed 's/\"//g;s/,//g;s/ //g'`
 	wget -O prometheus-${version:1}.linux-amd64.tar.gz https://github.com/prometheus/prometheus/releases/download/${version}/prometheus-${version:1}.linux-amd64.tar.gz
-	tar xvfz prometheus-*.*-amd64.tar.gz && cp prometheus-*.*-amd64/prometheus . && chown -R near_monitor:near_monitor /opt/prometheus/ /var/lib/prometheus/
+	tar xvfz prometheus-${version:1}.linux-amd64.tar.gz && cp prometheus-${version:1}.linux-amd64/prometheus . && chown -R near_monitor:near_monitor /opt/prometheus/ /var/lib/prometheus/
   wget -O /etc/systemd/system/prometheus.service https://raw.githubusercontent.com/davaymne/near-stakewars-monitoring/main/prometheus.service
 	echo -e '\n\e[42mStarting service prometheus...\e[0m\n'
 	systemctl enable --now prometheus
